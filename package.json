@@ -1,7 +1,7 @@
 {
   "name": "vite-plugin-imagemin-monorepo",
   "private": true,
-  "version": "0.7.0",
+  "version": "0.7.1",
   "description": "A vite plugin for compressing image assets",
   "license": "MIT",
   "author": "Vben",
@@ -49,6 +49,7 @@
     "commitizen": "^4.2.6",
     "conventional-changelog-cli": "^2.2.2",
     "cross-env": "^7.0.3",
+    "cpx": "^1.5.0",
     "eslint": "^8.29.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-html": "^7.1.0",
