@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import viteImagemin from '@madguy/vite-plugin-imagemin'
+import viteImagemin from '@madogai/vite-plugin-imagemin'
 
 export default defineConfig(({ mode }) => {
   const IS_LIB = mode === 'lib'

@@ -112,7 +112,7 @@ importers:
 
   packages/playground/basic:
     specifiers:
-      '@madguy/vite-plugin-imagemin': workspace:*
+      '@madogai/vite-plugin-imagemin': workspace:*
       '@vitejs/plugin-vue': ^4.0.0
       typescript: ^4.9.4
       vite: ^4.0.1
@@ -120,7 +120,7 @@ importers:
     dependencies:
       vue: 3.2.45
     devDependencies:
-      '@madguy/vite-plugin-imagemin': link:../../core
+      '@madogai/vite-plugin-imagemin': link:../../core
       '@vitejs/plugin-vue': 4.0.0_vite@4.0.1+vue@3.2.45
       typescript: 4.9.4
       vite: 4.0.1
