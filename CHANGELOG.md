@@ -1,3 +1,9 @@
+## # [0.7.2](https://github.com/madguy/vite-plugin-imagemin/compare/v0.7.0...v0.7.2) (2022-12-13)
+
+### Bug Fixes
+
+- revert vite support version
+
 # [0.7.0](https://github.com/madguy/vite-plugin-imagemin/compare/v0.6.2...v0.7.0) (2022-12-13)
 
 ### Features
