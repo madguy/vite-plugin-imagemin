@@ -64,7 +64,7 @@ importers:
       '@types/imagemin-svgo': ^10.0.2
       '@types/imagemin-webp': ^7.0.0
       '@types/node': ^18.11.14
-      '@types/svgo': ^3.0.0
+      '@types/svgo': ^2.6.4
       chalk: ^5.2.0
       debug: ^4.3.4
       fs-extra: ^11.1.0
@@ -88,7 +88,7 @@ importers:
       '@types/imagemin-optipng': 5.2.1
       '@types/imagemin-svgo': 10.0.2
       '@types/imagemin-webp': 7.0.0
-      '@types/svgo': 3.0.0
+      '@types/svgo': 2.6.4
       chalk: 5.2.0
       debug: 4.3.4
       fs-extra: 11.1.0
@@ -1370,7 +1370,7 @@ packages:
       }
     dependencies:
       '@types/imagemin': 8.0.0
-      '@types/svgo': 2.6.1
+      '@types/svgo': 2.6.4
     dev: false
 
   /@types/imagemin-webp/7.0.0:
@@ -1484,23 +1484,13 @@ packages:
       }
     dev: true
 
-  /@types/svgo/2.6.1:
+  /@types/svgo/2.6.4:
     resolution:
       {
-        integrity: sha512-4BfUnd19L25BD2iRyZTNuG4pfL9HBs+rvF7zp5maKhbX42uOpc5prGdBXXmCdHlVZfTWq8pNP/vxQt9v8ACxqQ==,
+        integrity: sha512-l4cmyPEckf8moNYHdJ+4wkHvFxjyW6ulm9l4YGaOxeyBWPhBOT0gvni1InpFPdzx1dKf/2s62qGITwxNWnPQng==,
       }
     dependencies:
       '@types/node': 18.11.14
-    dev: false
-
-  /@types/svgo/3.0.0:
-    resolution:
-      {
-        integrity: sha512-G5qLWNq/rMvSM1EyY4E2iEd+s9km/PxLkzPkA2lghrgWJ2jrVMuB1ZsGOzL4YAWCy5sAoUw7SEQseHE2qypF2w==,
-      }
-    deprecated: This is a stub types definition. svgo provides its own type definitions, so you do not need this installed.
-    dependencies:
-      svgo: 2.8.0
     dev: false
 
   /@types/tough-cookie/4.0.1:

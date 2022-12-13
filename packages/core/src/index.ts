@@ -1,4 +1,5 @@
 import type { Plugin, ResolvedConfig } from 'vite'
+import type { Plugin as ImageminPlugin } from 'imagemin'
 import type { VitePluginImageMin } from './types'
 import path from 'pathe'
 import fs from 'fs-extra'
@@ -8,7 +9,7 @@ import {
   isRegExp,
   isFunction,
   readAllFiles,
-} from '../src/utils'
+} from './utils'
 import chalk from 'chalk'
 import Debug from 'debug'
 
@@ -211,7 +212,7 @@ function filterFile(
 // imagemin compression plugin configuration
 function getImageminPlugins(
   options: VitePluginImageMin = {},
-): imagemin.Plugin[] {
+): ImageminPlugin[] {
   const {
     gifsicle = true,
     webp = false,
@@ -222,7 +223,7 @@ function getImageminPlugins(
     jpegTran = true,
   } = options
 
-  const plugins: imagemin.Plugin[] = []
+  const plugins: ImageminPlugin[] = []
 
   if (isNotFalse(gifsicle)) {
     debug('gifsicle:', true)

@@ -50,7 +50,7 @@
     "@types/imagemin-optipng": "^5.2.1",
     "@types/imagemin-svgo": "^10.0.2",
     "@types/imagemin-webp": "^7.0.0",
-    "@types/svgo": "^3.0.0",
+    "@types/svgo": "^2.6.4",
     "chalk": "^5.2.0",
     "debug": "^4.3.4",
     "fs-extra": "^11.1.0",
