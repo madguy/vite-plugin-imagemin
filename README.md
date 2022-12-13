@@ -1,4 +1,4 @@
-# vite-plugin-imagemin
+# @madguy/vite-plugin-imagemin
 
 **English** | [中文](./README.zh_CN.md)
 
@@ -123,7 +123,7 @@ MIT
 
 [vite-plugin-compress](https://github.com/alloc/vite-plugin-compress)
 
-[npm-img]: https://img.shields.io/npm/v/vite-plugin-imagemin.svg
-[npm-url]: https://npmjs.com/package/vite-plugin-imagemin
-[node-img]: https://img.shields.io/node/v/vite-plugin-imagemin.svg
+[npm-img]: https://img.shields.io/npm/v/@madogai/vite-plugin-imagemin.svg
+[npm-url]: https://npmjs.com/package/@madogai/vite-plugin-imagemin
+[node-img]: https://img.shields.io/node/v/@madogai/vite-plugin-imagemin.svg
 [node-url]: https://nodejs.org/en/about/releases/

@@ -1,6 +1,7 @@
 import type { Plugin, ResolvedConfig } from 'vite'
+import type { Plugin as ImageminPlugin } from 'imagemin'
 import type { VitePluginImageMin } from './types'
-import path from 'pathe'
+import path from 'node:path'
 import fs from 'fs-extra'
 import {
   isNotFalse,
@@ -8,7 +9,7 @@ import {
   isRegExp,
   isFunction,
   readAllFiles,
-} from '../src/utils'
+} from './utils'
 import chalk from 'chalk'
 import Debug from 'debug'
 
@@ -25,7 +26,7 @@ const debug = Debug.debug('vite-plugin-imagemin')
 
 const extRE = /\.(png|jpeg|gif|jpg|bmp|svg)$/i
 
-export default function (options: VitePluginImageMin = {}) {
+export default function VitePluginImagemin(options: VitePluginImageMin = {}) {
   let outputPath: string
   let publicDir: string
   let config: ResolvedConfig
@@ -39,7 +40,7 @@ export default function (options: VitePluginImageMin = {}) {
   debug('plugin options:', options)
 
   const mtimeCache = new Map<string, number>()
-  let tinyMap = new Map<
+  const tinyMap = new Map<
     string,
     { size: number; oldSize: number; ratio: number }
   >()
@@ -82,8 +83,37 @@ export default function (options: VitePluginImageMin = {}) {
 
       debug('resolvedConfig:', resolvedConfig)
     },
+    async transform(code, id) {
+      if (!config.build.lib) {
+        return { code }
+      }
+
+      const relativePath = path.relative(config.root, id)
+      if (filterFile(relativePath, filter) === false) {
+        return { code }
+      }
+
+      const match = code.match(/^(.+)"(data:image\/.+),(.+)"$/)
+      if (match == null) {
+        return { code }
+      }
+
+      const [, prefix, mime, base64] = match
+      const buffer = Buffer.from(base64, 'base64')
+      const content = await processFile(relativePath, buffer)
+      if (content == null) {
+        return { code }
+      }
+
+      return {
+        code: `${prefix}"${mime},${Buffer.from(content).toString('base64')}"`,
+      }
+    },
     async generateBundle(_, bundler) {
-      tinyMap = new Map()
+      if (config.build.lib) {
+        return
+      }
+
       const files: string[] = []
 
       Object.keys(bundler).forEach((key) => {
@@ -211,7 +241,7 @@ function filterFile(
 // imagemin compression plugin configuration
 function getImageminPlugins(
   options: VitePluginImageMin = {},
-): imagemin.Plugin[] {
+): ImageminPlugin[] {
   const {
     gifsicle = true,
     webp = false,
@@ -222,7 +252,7 @@ function getImageminPlugins(
     jpegTran = true,
   } = options
 
-  const plugins: imagemin.Plugin[] = []
+  const plugins: ImageminPlugin[] = []
 
   if (isNotFalse(gifsicle)) {
     debug('gifsicle:', true)

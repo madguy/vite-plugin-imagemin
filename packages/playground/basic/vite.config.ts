@@ -1,16 +1,31 @@
-import { UserConfigExport } from 'vite'
+import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import jsx from '@vitejs/plugin-vue-jsx'
-import viteImagemin from 'vite-plugin-imagemin'
+import viteImagemin from '@madogai/vite-plugin-imagemin'
 
-export default (): UserConfigExport => {
+export default defineConfig(({ mode }) => {
+  const IS_LIB = mode === 'lib'
   return {
     build: {
       assetsInlineLimit: 0,
+      lib: IS_LIB
+        ? {
+            entry: 'src/main.ts',
+            name: 'imagemin',
+            formats: ['iife'],
+          }
+        : undefined,
+    },
+    publicDir: IS_LIB ? 'public-lib' : 'public',
+    resolve: {
+      alias: {
+        '@@': __dirname,
+      },
+    },
+    define: {
+      'process.env': process.env ?? {},
     },
     plugins: [
       vue(),
-      jsx(),
       viteImagemin({
         gifsicle: {
           optimizationLevel: 7,
@@ -40,4 +55,4 @@ export default (): UserConfigExport => {
       }),
     ],
   }
-}
+})

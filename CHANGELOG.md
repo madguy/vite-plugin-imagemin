@@ -1,3 +1,9 @@
+# [0.7.0](https://github.com/madguy/vite-plugin-imagemin/compare/v0.6.2...v0.7.0) (2022-12-13)
+
+### Features
+
+- support vite library mode
+
 ## [0.6.1](https://github.com/anncwb/vite-plugin-imagemin/compare/v0.5.2...v0.6.1) (2022-01-29)
 
 ### Bug Fixes
