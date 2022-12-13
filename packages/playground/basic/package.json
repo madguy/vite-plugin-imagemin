@@ -4,19 +4,17 @@
   "private": true,
   "scripts": {
     "dev": "vite",
-    "build": "vite build "
+    "build": "vite build",
+    "build:lib": "vite build --mode lib",
+    "preview": "vite preview"
   },
   "dependencies": {
-    "fast-glob": "^3.2.11",
-    "vue": "^3.2.29"
+    "vue": "^3.2.45"
   },
   "devDependencies": {
     "@madguy/vite-plugin-imagemin": "workspace:*",
-    "@vitejs/plugin-vue": "^2.1.0",
-    "@vitejs/plugin-vue-jsx": "^1.3.3",
-    "@vue/compiler-sfc": "^3.2.29",
-    "cross-env": "^7.0.3",
-    "typescript": "^4.5.5",
-    "vite": "^2.9.15"
+    "@vitejs/plugin-vue": "^4.0.0",
+    "typescript": "^4.9.4",
+    "vite": "^4.0.1"
   }
 }

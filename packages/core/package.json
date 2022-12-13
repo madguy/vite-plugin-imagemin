@@ -1,6 +1,6 @@
 {
   "name": "@madguy/vite-plugin-imagemin",
-  "version": "0.6.2",
+  "version": "0.7.0",
   "description": "A vite plugin for compressing image assets",
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
@@ -16,7 +16,7 @@
   "author": "Vben",
   "contributors": [
     "bituq (https://github.com/bituq)",
-    "madguy"
+    "madogai (https://github.com/madguy)"
   ],
   "files": [
     "dist"
@@ -67,7 +67,7 @@
     "pathe": "^1.0.0"
   },
   "peerDependencies": {
-    "vite": ">=2.8.0"
+    "vite": ">=4.0.0"
   },
   "devDependencies": {
     "@types/chalk": "^2.2.0",

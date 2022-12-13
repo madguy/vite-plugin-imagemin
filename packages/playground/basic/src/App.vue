@@ -10,10 +10,10 @@
     </div>
     <div>
       <h2>static</h2>
-      <img src="/images/static-test.gif" />
-      <img src="/images/static-test.jpg" />
-      <img src="/images/static-test.png" />
-      <img src="/images/static-test.svg" />
+      <img src="@@/public/images/static-test.gif" />
+      <img src="@@/public/images/static-test.jpg" />
+      <img src="@@/public/images/static-test.png" />
+      <img src="@@/public/images/static-test.svg" />
     </div>
   </div>
 </template>
