@@ -11,13 +11,12 @@
     "vue": "^3.2.29"
   },
   "devDependencies": {
-    "@vitejs/plugin-legacy": "^1.6.4",
+    "@madguy/vite-plugin-imagemin": "workspace:*",
     "@vitejs/plugin-vue": "^2.1.0",
     "@vitejs/plugin-vue-jsx": "^1.3.3",
     "@vue/compiler-sfc": "^3.2.29",
     "cross-env": "^7.0.3",
     "typescript": "^4.5.5",
-    "vite": "^2.7.13",
-    "vite-plugin-imagemin": "workspace:*"
+    "vite": "^2.9.15"
   }
 }
