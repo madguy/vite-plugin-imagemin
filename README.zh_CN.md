@@ -1,4 +1,4 @@
-# @@madogai/vite-plugin-imagemin
+# @madogai/vite-plugin-imagemin
 
 **中文** | [English](./README.md)
 
