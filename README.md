@@ -1,4 +1,4 @@
-# @madguy/vite-plugin-imagemin
+# @madogai/vite-plugin-imagemin
 
 **English** | [中文](./README.zh_CN.md)
 
