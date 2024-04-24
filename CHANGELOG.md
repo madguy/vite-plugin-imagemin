@@ -1,3 +1,9 @@
+## # [0.7.4](https://github.com/madguy/vite-plugin-imagemin/compare/v0.7.3...v0.7.4) (2024-04-25)
+
+### Bug Fixes
+
+- fix svg convert error
+
 ## # [0.7.3](https://github.com/madguy/vite-plugin-imagemin/compare/v0.7.2...v0.7.3) (2022-12-15)
 
 ### Bug Fixes
