@@ -97,16 +97,16 @@ export default function VitePluginImagemin(options: VitePluginImageMin = {}) {
       if (match == null) {
         return { code }
       }
-
-      const [, prefix, mime, base64] = match
-      const buffer = Buffer.from(base64, 'base64')
-      const content = await processFile(relativePath, buffer)
-      if (content == null) {
+      const [, prefix, mime, content] = match
+      const isBase64 = mime.endsWith('base64')
+      const buffer = Buffer.from(content, isBase64 ? 'base64' : undefined)
+      const processed = await processFile(relativePath, buffer)
+      if (processed == null) {
         return { code }
       }
-
+      const encoding = isBase64 ? 'base64' : 'utf8'
       return {
-        code: `${prefix}"${mime},${Buffer.from(content).toString('base64')}"`,
+        code: `${prefix}"${mime},${Buffer.from(processed).toString(encoding)}"`,
       }
     },
     async generateBundle(_, bundler) {
